@@ -31,15 +31,6 @@ public class ForecastFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ForecastFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ForecastFragment newInstance(String param1, String param2) {
         ForecastFragment fragment = new ForecastFragment();
         Bundle args = new Bundle();
@@ -63,7 +54,7 @@ public class ForecastFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         LinearLayout main = new LinearLayout(getActivity());
-        main.setBackgroundColor(#200000F);
+        main.setBackgroundColor(200000);
         main.setOrientation(LinearLayout.VERTICAL);
         //monday
         TextView monday = new TextView(getActivity());
@@ -92,7 +83,6 @@ public class ForecastFragment extends Fragment {
         //thursday
         TextView thursday = new TextView(getActivity());
         monday.setText("Thursday: Sunny, 88 degree Fahrenheit.");
-        ImageView sunny = new ImageView(getActivity());
         sunny.setImageResource(R.drawable.sunny);
 
         main.addView(thursday);
@@ -116,7 +106,6 @@ public class ForecastFragment extends Fragment {
         //sunday
         TextView sunday = new TextView(getActivity());
         saturday.setText("Sunday: Sunny, 81 degree Fahrenheit.");
-        ImageView sunny = new ImageView(getActivity());
         sunny.setImageResource(R.drawable.sunny);
 
         main.addView(sunday);

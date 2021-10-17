@@ -11,7 +11,7 @@
         android:theme="@style/Theme.USTHWeather">
         <activity
             android:name=".WeatherActivity"
-            android:exported="true" />
+            android:exported="true" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
