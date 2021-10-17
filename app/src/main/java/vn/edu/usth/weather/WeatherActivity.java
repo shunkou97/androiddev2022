@@ -1,9 +1,12 @@
 package vn.edu.usth.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -11,10 +14,12 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        WeatherFragmentAdapter adapter = new WeatherFragmentAdapter(this);
+        pager.setAdapter(adapter);
+
         Log.i("Weather", "onCreate() called");
 
-        ForecastFragment firstFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
     }
 
     @Override
