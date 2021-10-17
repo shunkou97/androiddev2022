@@ -8,17 +8,50 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/light_blue"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:id="@+id/monday">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Monday" />
+
+        <ImageView
+            android:layout_width="15pt"
+            android:layout_height="15pt"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/sunny"
+            android:id="@+id/mon_weather"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:id="@+id/mon_temp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/sunny"
+                android:id="@+id/mon_weather_des"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="93 degree Fahrenheit"
+                android:id="@+id/mon_temp_des"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="" />
 
 </LinearLayout>
