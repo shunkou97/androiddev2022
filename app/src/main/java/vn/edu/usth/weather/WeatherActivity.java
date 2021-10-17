@@ -3,10 +3,14 @@ package vn.edu.usth.weather;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -14,9 +18,27 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        WeatherFragmentAdapter adapter = new WeatherFragmentAdapter(this);
-        pager.setAdapter(adapter);
+        //change to viewpager2 because viewpager1 doesn't even work lol and it's fricking bothersome to debug
+        TabLayout hero_overview_tab_layout = findViewById(R.id.activity_weather_tab_layout);
+        ViewPager2 hero_overview_view_pager = findViewById(R.id.activity_weather_view_pager);
+
+        WeatherFragmentAdapter overview_adapter = new WeatherFragmentAdapter(this);
+        activity_weather_view_pager.setAdapter(overview_adapter);
+
+        new TabLayoutMediator(hero_overview_tab_layout, hero_overview_view_pager, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setText("HANOI, VIETNAM");
+                    break;
+                case 1:
+                    tab.setText("PARIS, FRANCE");
+                    break;
+                case 2:
+                    tab.setText("TOULOUISE, FRANCE");
+                    break;
+            }
+        }).attach();
+
 
         Log.i("Weather", "onCreate() called");
 
