@@ -5,6 +5,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,9 @@ public class WeatherActivity extends AppCompatActivity {
 
         WeatherFragmentAdapter overview_adapter = new WeatherFragmentAdapter(this);
         activity_weather_view_pager.setAdapter(overview_adapter);
+
+        MediaPlayer mp = MediaPlayer.create(getBaseContext(), R.raw.Celestia);
+        mp.start();
 
         new TabLayoutMediator(hero_overview_tab_layout, hero_overview_view_pager, (tab, position) -> {
             switch (position) {
